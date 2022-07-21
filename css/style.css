@@ -2,11 +2,13 @@
   box-sizing: border-box;
 }
 body {
+  max-width: 1900px;
+  min-width: 300px;
   display: flex;
   height: auto;
   flex-direction: column;
   margin: auto;
-  padding: 0;
+  padding: 0 20px 0 20px;
   font-size: 18px;
   line-height: 1.5;
   color: rgb(0, 0, 0);
@@ -14,12 +16,14 @@ body {
   font-family: "Raleway", sans-serif;
 }
 .header {
-  padding-top: 50px;
+  padding-top: 80px;
 }
 .header,
 .footer {
   background: #fff;
   color: rgb(0, 0, 0);
+  width: 100%;
+  margin: auto;
 }
 h6 {
   font-style: normal;
@@ -43,12 +47,6 @@ h6 {
   flex-direction: row;
   justify-content: space-between;
 }
-@media all and (min-width: 280px) and (max-width: 768px) {
-  .nav {
-    display: flex;
-    flex-direction: column;
-  }
-}
 .main {
   flex: 1;
   padding: 25px;
@@ -71,12 +69,30 @@ h6 {
   transition: border-color 400ms ease-out;
 }
 @media all and (min-width: 280px) and (max-width: 768px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .sup_title {
+    display: flex;
+    flex-direction: row;
+  }
+  .flex-item-menu {
+    width: 50%;
+  }
+  #left {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 70px;
+  }
+  #right {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 70px;
+  }
   .flex-item {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    padding-bottom: 70px;
+    padding-bottom: 68px;
   }
   .flex-item:hover {
     color: #0065fc;
@@ -116,6 +132,7 @@ h6 {
   margin: auto;
   padding-top: 35px;
   padding-bottom: 35px;
+  padding-left: 20px;
   background-color: #f2f2f287;
 }
 .footer-a-propos,
@@ -165,28 +182,26 @@ h6 {
 }
 .search {
   display: flex;
+  height: 50px;
+  padding: 5px;
 }
 .searchTerm {
   width: 250px;
   border: 2px solid #f2f2f2;
   border-right: none;
-  padding: 5px;
-  height: 34px;
+
+  height: 50px;
   border-radius: 0 0 0 0;
   outline: none;
   font-weight: bold;
 }
-@media all and (min-width: 280px) and (max-width: 768px) {
-  .searchTerm {
-    width: 120px;
-  }
-}
+
 .searchTerm:focus {
   color: #380136;
 }
 .search-button {
-  width: auto;
-  height: 34px;
+  width: 120px;
+  height: 50px;
   border: 1px solid #f2f2f2;
   background: #0065fc;
   text-align: center;
@@ -199,14 +214,18 @@ h6 {
 }
 .search-button-1 {
   width: 40px;
-  height: 34px;
+  height: 50px;
   background: #f2f2f2;
   text-align: center;
   border-radius: 5px 0 0 5px;
   cursor: pointer;
   border: none;
 }
-
+@media all and (min-width: 280px) and (max-width: 768px) {
+  .searchTerm {
+    width: 120px;
+  }
+}
 /* Filtre items */
 
 .filtre {
@@ -247,10 +266,11 @@ h6 {
 }
 .filtre-items-icon:hover {
   font-weight: 500;
-  background-color: rgba(20, 233, 151, 0.579);
-  box-shadow: 2px 2px 6px rgb(20, 233, 151);
-  -webkit-box-shadow: 2px 2px 6px rgb(20, 233, 151);
-  -moz-box-shadow: 2px 2px 6px rgb(20, 233, 151);
+  border: none;
+  background-color: rgba(0, 101, 252, 0.579);
+  box-shadow: 2px 2px 6px rgb(0, 101, 252);
+  -webkit-box-shadow: 2px 2px 6px rgb(0, 101, 252);
+  -moz-box-shadow: 2px 2px 6px rgb(0, 101, 252);
 }
 .filtre-icon {
   display: inline-block;
@@ -333,37 +353,64 @@ h6 {
   justify-content: center;
   align-items: center;
 }
+* {
+  box-sizing: border-box;
+}
 .hebergements-et-populaires {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex: 25%;
+  margin: 20px;
 }
 
 .hebergements {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: rgba(240, 240, 240, 0.63);
   border-radius: 30px;
-  width: 65%;
-  min-width: 348px;
-  height: auto;
+}
+.hebergements-all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 .hebergements-items {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex: 30%;
   background-color: #ffffff;
   padding: 5px;
   border-radius: 30px;
   border-color: #f2f2f287;
   border-style: ridge;
   border: 4px;
-  margin: 15px auto;
+  margin: 15px;
   box-shadow: 0px 5px 20px #999;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 992px) {
+  .hebergements-items {
+    display: flex;
+    flex: 50%;
+  }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 800px) {
+  .hebergements-et-populaires {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 700px) {
+  .hebergements-items {
+    display: flex;
+    flex: 100%;
+  }
 }
 .hebergements-titre {
   display: flex;
@@ -372,13 +419,7 @@ h6 {
   align-items: flex-start;
   padding-left: 50px;
 }
-.hebergements-all {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
+
 .hebergements-lien {
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -390,7 +431,6 @@ h6 {
   flex-wrap: nowrap;
   align-content: flex-start;
   justify-content: space-around;
-  margin: 0;
   padding: 5px;
   text-align: left;
 }
@@ -399,15 +439,13 @@ h6 {
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 250px;
-  height: 150px;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
+  width: 100%;
 }
 .hebergement-photo {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  min-height: 150px;
   image-resolution: initial;
   overflow: hidden;
   border-radius: 30px 0 0;
@@ -416,67 +454,15 @@ h5,
 h6 {
   margin: 0;
 }
-/* rating rating 2*/
-
-p,
-p a {
-  color: #aaa;
-  text-decoration: none;
-}
-p a:hover,
-p a:focus {
-  text-decoration: underline;
-}
-p + p {
-  color: #bbb;
-  margin-top: 2em;
-}
-.detail {
-  position: absolute;
-  text-align: right;
-  right: 5px;
-  bottom: 5px;
-  width: 50%;
-}
-
-a[href*="intent"] {
-  display: inline-block;
-  margin-top: 0.4em;
-}
-/*  
- * Rating styles
- */
 .rating {
-  width: 100px;
-
-  font-size: 25px;
-  overflow: hidden;
-  border-radius: 10px;
+  display: flex;
 }
-.rating a {
-  float: right;
+p {
   color: #aaa;
-  text-decoration: none;
-  -webkit-transition: color 0.4s;
-  -moz-transition: color 0.4s;
-  -o-transition: color 0.4s;
-  transition: color 0.4s;
 }
-.rating a:hover,
-.rating a:hover ~ a,
-.rating a:focus,
-.rating a:focus ~ a {
+.blue-star {
   color: #0065fc;
-  cursor: pointer;
 }
-.rating2 {
-  direction: rtl;
-}
-.rating2 a {
-  float: none;
-}
-
-/* rating rating 2*/
 h6 {
   font-weight: 200;
 }
@@ -493,9 +479,8 @@ h6 {
   background-color: rgba(240, 240, 240, 0.63);
   border-radius: 30px;
   align-content: flex-start;
-  width: 30%;
-  min-width: 348px;
 }
+
 .populaires-titre {
   display: flex;
   flex-direction: row;
@@ -503,7 +488,6 @@ h6 {
   align-items: center;
   flex-wrap: nowrap;
   align-content: center;
-  width: inherit;
 }
 .populaires-icon {
   display: flex;
@@ -550,189 +534,100 @@ h6 {
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 150px;
-  height: 150px;
   overflow: hidden;
   border-radius: 30px 0 0 30px;
   padding-right: 15px;
 }
 /* ----------------------------------- */
-.activites {
+.activites-titre {
+  padding-left: 25px;
+}
+* {
+  box-sizing: border-box;
+}
+.row {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   align-content: center;
-  width: 100%;
-  margin: auto;
-  margin-bottom: 50px;
-}
-.wrapper {
-  display: flex;
   align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px;
 }
+
+/* Create four equal columns that sits next to each other */
 .column {
   display: flex;
+  flex: 25%;
+  max-width: 25%;
   flex-direction: column;
-  width: 375px;
-  height: 550px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
-.column > div {
-  color: rgb(0, 0, 0);
-  background: rgb(255, 255, 255);
-  margin: 15px;
-  padding: 10px;
-  border-radius: 30px;
-  flex: 1;
-}
-.vieux-port {
+.vieux-port,
+.parc-nationale-des-calanques {
   background-color: #ffffff;
-  padding: 5px;
   border-radius: 30px;
   border-color: #ffffff87;
   border-style: ridge;
   border: 4px;
-  margin: auto;
   box-shadow: 0px 5px 20px #999;
+  margin: 20px;
 }
-.image-ltr-1 {
+.image-ltr-1,
+.image-ltr-4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 450px;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
-  margin: auto;
-}
-.titre-ltr-1 {
-  display: flex;
+  align-items: flex-start;
   width: 100%;
-  height: 10%;
-  margin: auto;
-  padding-top: 20px;
-  justify-content: left;
+  height: 100%;
 }
-.fort-de-pomegues {
+.fort-de-pomegues,
+.iles-du-frioul,
+.notre-dame-de-la-garde,
+.parc-longchamp {
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
-  padding: 5px;
   border-radius: 30px;
   border-color: #ffffff87;
   border-style: ridge;
   border: 4px;
-  margin: auto;
   box-shadow: 0px 5px 20px #999;
+  margin: 20px;
 }
 .image-ltr-2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 225px;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
-  margin: auto;
-}
-.titre-ltr-2 {
-  display: flex;
+  align-items: flex-start;
   width: 100%;
-  height: 10%;
-  margin: auto;
-  padding-top: 20px;
-  justify-content: left;
-}
-.iles-du-frioul {
-  background-color: #ffffff;
-  padding: 5px;
-  border-radius: 30px;
-  border-color: #ffffff87;
-  border-style: ridge;
-  border: 4px;
-  margin: auto;
-  box-shadow: 0px 5px 20px #999;
+  height: 100%;
 }
 .image-ltr-3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120px;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
-  margin: auto;
-}
-.titre-ltr-3 {
-  display: flex;
+  align-items: flex-start;
   width: 100%;
-  height: 10%;
-  margin: auto;
-  padding-top: 20px;
-  justify-content: left;
-}
-.parc-nationale-des-calanques {
-  background-color: #ffffff;
-  padding: 5px;
-  border-radius: 30px;
-  border-color: #ffffff87;
-  border-style: ridge;
-  border: 4px;
-  margin: auto;
-  box-shadow: 0px 5px 20px #999;
-}
-.image-ltr-4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 450px;
-  overflow: hidden;
-  border-radius: 30px 30px 0 0;
-  margin: auto;
-}
-.titre-ltr-4 {
-  display: flex;
-  width: 100%;
-  height: 10%;
-  margin: auto;
-  padding-top: 20px;
-  justify-content: left;
-}
-.notre-dame-de-la-garde {
-  background-color: #ffffff;
-  padding: 5px;
-  border-radius: 30px;
-  border-color: #ffffff87;
-  border-style: ridge;
-  border: 4px;
-  margin: auto;
-  box-shadow: 0px 5px 20px #999;
+  height: 100%;
 }
 .image-ltr-5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 175px;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
-  margin: auto;
-}
-.titre-ltr-5 {
-  display: flex;
+  align-items: flex-start;
   width: 100%;
-  height: 10%;
-  margin: auto;
-  padding-top: 20px;
-  justify-content: left;
-}
-.parc-longchamp {
-  background-color: #ffffff;
-  padding: 5px;
-  border-radius: 30px;
-  border-color: #ffffff87;
-  border-style: ridge;
-  border: 4px;
-  margin: auto;
-  box-shadow: 0px 5px 20px #999;
+  height: 100%;
 }
 .image-ltr-6 {
   display: flex;
@@ -740,15 +635,46 @@ h6 {
   align-items: center;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
-  margin: auto;
-  height: 175px;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
 }
-
+#vieux-port-photo,
+#fort-de-pomegues-photo,
+#iles-du-frioul-photo,
+#parc-national-des-calanques-photo,
+#notre-dame-de-la-garde-photo,
+#parc-longchamp-photo {
+  width: 100%;
+  height: 100%;
+}
+.titre-ltr-1,
+.titre-ltr-4,
+.titre-ltr-2,
+.titre-ltr-3,
+.titre-ltr-5,
 .titre-ltr-6 {
   display: flex;
   width: 100%;
   height: 10%;
-  margin: auto;
   padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
   justify-content: left;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 900px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 700px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
