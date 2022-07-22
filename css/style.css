@@ -391,8 +391,8 @@ h6 {
   max-width: 65%;
   flex-direction: column;
   align-content: center;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: stretch;
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: rgba(240, 240, 240, 0.63);
