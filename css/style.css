@@ -347,6 +347,10 @@ h6 {
     align-items: flex-start;
     align-content: flex-start;
   }
+  .logo-booki {
+    width: 191px;
+    height: 90px;
+  }
 }
 
 .filtre-items-text {
@@ -480,6 +484,11 @@ h6 {
   .hebergements {
     display: flex;
     max-width: 95%;
+  }
+}
+@media (max-width: 520px) {
+  .textes-populaires {
+    font-size: initial;
   }
 }
 .hebergements-titre {
