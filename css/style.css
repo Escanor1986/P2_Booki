@@ -311,6 +311,18 @@ h6 {
   position: relative;
   right: 5px;
 }
+#deux {
+  position: relative;
+  right: 5px;
+}
+#trois {
+  position: relative;
+  right: 5px;
+}
+#quatres {
+  position: relative;
+  right: 5px;
+}
 @media all and (min-width: 280px) and (max-width: 768px) {
   .filtre-items {
     margin-top: 10px;
@@ -693,16 +705,9 @@ h6 {
   box-shadow: 0px 5px 20px #999;
   margin: 20px;
 }
-.image-ltr-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 30px 30px 0 0;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-}
+.image-ltr-5,
+.image-ltr-2,
+.image-ltr-6,
 .image-ltr-3 {
   display: flex;
   justify-content: center;
@@ -713,26 +718,7 @@ h6 {
   width: 100%;
   height: 100%;
 }
-.image-ltr-5 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 30px 30px 0 0;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-}
-.image-ltr-6 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 30px 30px 0 0;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-}
+
 #vieux-port-photo,
 #fort-de-pomegues-photo,
 #iles-du-frioul-photo,
