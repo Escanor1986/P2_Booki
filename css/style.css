@@ -82,12 +82,12 @@ h6 {
   }
   #left {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding-top: 70px;
   }
   #right {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding-top: 70px;
   }
   .flex-item {
@@ -240,7 +240,8 @@ h6 {
     display: block;
     width: 40px;
     height: 50px;
-    background: #f2f2f2;
+    background: #0065fc;
+    color: #f2f2f2;
     text-align: center;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
@@ -403,7 +404,7 @@ h6 {
   max-width: 65%;
   flex-direction: column;
   align-content: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: stretch;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -506,9 +507,6 @@ h6 {
 }
 .hebergements-titre {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   padding-left: 50px;
 }
 
@@ -524,6 +522,7 @@ h6 {
   overflow: hidden;
   border-radius: 30px 30px 0 0;
   width: 100%;
+  object-fit: fill;
 }
 .container {
   display: flex;
@@ -541,6 +540,7 @@ h6 {
   image-resolution: initial;
   overflow: hidden;
   border-radius: 30px 0 0;
+  object-fit: fill;
 }
 .rating {
   display: flex;
@@ -631,8 +631,6 @@ h6 {
   align-items: stretch;
   width: 55%;
 }
-.textes-populaires {
-}
 .responsive.right {
   display: flex;
   justify-content: center;
@@ -643,6 +641,7 @@ h6 {
   padding-right: 15px;
   width: 45%;
   height: 100%;
+  object-fit: fill;
 }
 /* ----------------------------------- */
 .activites-titre {
@@ -654,21 +653,22 @@ h6 {
 .row {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
-  align-items: center;
-  justify-content: space-around;
+  align-items: stretch;
   margin: 10px;
 }
 
 /* Create four equal columns that sits next to each other */
-.column {
+#column {
   display: flex;
   flex: 25%;
   max-width: 25%;
   flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+}
+.column {
+  display: flex;
+  flex: 25%;
+  max-width: 25%;
 }
 .vieux-port,
 .parc-nationale-des-calanques {
@@ -680,16 +680,17 @@ h6 {
   box-shadow: 0px 5px 20px #999;
   margin: 20px;
 }
+.vieux-port :hover {
+  transform: scale(1.1);
+}
 .image-ltr-1,
 .image-ltr-4 {
   display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
-  align-items: flex-start;
   width: 100%;
-  height: 100%;
+  height: 90%;
+  object-fit: fill;
 }
 .fort-de-pomegues,
 .iles-du-frioul,
@@ -710,13 +711,11 @@ h6 {
 .image-ltr-6,
 .image-ltr-3 {
   display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   border-radius: 30px 30px 0 0;
-  align-items: flex-start;
   width: 100%;
-  height: 100%;
+  height: 90%;
+  object-fit: fill;
 }
 
 #vieux-port-photo,
@@ -727,6 +726,7 @@ h6 {
 #parc-longchamp-photo {
   width: 100%;
   height: 100%;
+  object-fit: fill;
 }
 .titre-ltr-1,
 .titre-ltr-4,
@@ -741,6 +741,7 @@ h6 {
   padding-left: 10px;
   padding-bottom: 20px;
   justify-content: left;
+  align-items: center;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
@@ -749,11 +750,19 @@ h6 {
     flex: 50%;
     max-width: 50%;
   }
+  #column {
+    flex: 50%;
+    max-width: 50%;
+  }
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 700px) {
   .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+  #column {
     flex: 100%;
     max-width: 100%;
   }
