@@ -658,7 +658,7 @@ h6 {
 }
 
 /* Create four equal columns that sits next to each other */
-#column {
+.column_1 {
   display: flex;
   flex: 25%;
   max-width: 25%;
@@ -750,7 +750,7 @@ h6 {
     flex: 50%;
     max-width: 50%;
   }
-  #column {
+  .column_1 {
     flex: 50%;
     max-width: 50%;
   }
@@ -762,7 +762,7 @@ h6 {
     flex: 100%;
     max-width: 100%;
   }
-  #column {
+  .column_1 {
     flex: 100%;
     max-width: 100%;
   }
