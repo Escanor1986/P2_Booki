@@ -728,6 +728,14 @@ h6 {
   height: 100%;
   object-fit: fill;
 }
+#mobile_vieux-port-photo,
+#mobile_fort-de-pomegues-photo,
+#mobile_iles-du-frioul-photo,
+#mobile_parc-national-des-calanques-photo,
+#mobile_notre-dame-de-la-garde-photo,
+#mobile_parc-longchamp-photo {
+  display: none;
+}
 .titre-ltr-1,
 .titre-ltr-4,
 .titre-ltr-2,
@@ -758,6 +766,12 @@ h6 {
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 700px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    flex-direction: column;
+  }
   .column {
     flex: 100%;
     max-width: 100%;
@@ -765,5 +779,34 @@ h6 {
   .column_1 {
     flex: 100%;
     max-width: 100%;
+  }
+  .fort-de-pomegues,
+  .iles-du-frioul,
+  .notre-dame-de-la-garde,
+  .parc-longchamp,
+  .vieux-port,
+  .parc-nationale-des-calanques {
+    max-width: 100%;
+    max-height: 100%x;
+    width: 100%;
+    object-fit: cover;
+  }
+  #vieux-port-photo,
+  #fort-de-pomegues-photo,
+  #iles-du-frioul-photo,
+  #parc-national-des-calanques-photo,
+  #notre-dame-de-la-garde-photo,
+  #parc-longchamp-photo {
+    display: none;
+  }
+  #mobile_vieux-port-photo,
+  #mobile_fort-de-pomegues-photo,
+  #mobile_iles-du-frioul-photo,
+  #mobile_parc-national-des-calanques-photo,
+  #mobile_notre-dame-de-la-garde-photo,
+  #mobile_parc-longchamp-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
