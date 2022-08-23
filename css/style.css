@@ -468,7 +468,7 @@ h6 {
 }
 .hebergements-titre {
   display: flex;
-  padding-left: 50px;
+  padding-left: 5%;
 }
 
 .hebergements-lien {
