@@ -83,20 +83,19 @@ h6 {
   #left {
     display: flex;
     justify-content: center;
-    padding-top: 70px;
+    padding-top: 35px;
   }
   #right {
     display: flex;
     justify-content: center;
-    padding-top: 70px;
+    padding-top: 35px;
   }
   .flex-item {
     display: flex;
-    padding-bottom: 68px;
   }
   .flex-item:hover {
     color: #0065fc;
-    padding-bottom: 68px;
+    padding-bottom: 10px;
     border-bottom: 2px solid #0065fc;
     transition: border-color 400ms ease-out;
     border-top: none;
@@ -124,60 +123,6 @@ h6 {
 .flex-item.home a {
   border: none;
 }
-
-.footer-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  margin: auto;
-  padding-top: 35px;
-  padding-bottom: 35px;
-  padding-left: 20px;
-  background-color: #f2f2f287;
-}
-.footer-a-propos,
-.footer-nos-hebergements,
-.footer-assistance {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  line-height: 25px;
-  padding-right: 250px;
-}
-.titre-1-1,
-.titre-2-1,
-.titre-3-1 {
-  padding-bottom: 10px;
-}
-@media all and (min-width: 280px) and (max-width: 768px) {
-  .footer-nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    background-color: #f2f2f287;
-    flex-wrap: nowrap;
-    align-content: flex-start;
-    align-items: flex-start;
-  }
-  .footer-a-propos,
-  .footer-nos-hebergements,
-  .footer-assistance {
-    line-height: 20px;
-    padding-right: 0;
-  }
-  .titre-1-1,
-  .titre-2-1,
-  .titre-3-1 {
-    padding-bottom: 20px;
-    padding-top: 20px;
-  }
-}
-
 .wrap {
   display: flex;
   flex-direction: row;
@@ -229,23 +174,39 @@ h6 {
 .loupe {
   display: none;
 }
-@media all and (min-width: 280px) and (max-width: 768px) {
+@media all and (min-width: 300px) and (max-width: 768px) {
   .searchTerm {
-    width: 120px;
+    width: 70%;
   }
   .search-button {
     display: none;
   }
   .loupe {
     display: block;
-    width: 40px;
+    width: 20%;
     height: 50px;
     background: #0065fc;
     color: #f2f2f2;
     text-align: center;
-    border-radius: 0 5px 5px 0;
+    border-radius: 10px 10px 10px 10px;
     cursor: pointer;
     border: none;
+  }
+  .logo-mobile {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media all and (min-width: 300px) and (max-width: 400px) {
+  .search {
+    width: 100%;
+    display: flex;
+  }
+}
+@media all and (min-width: 401px) and (max-width: 768px) {
+  .search {
+    width: 80%;
+    display: flex;
   }
 }
 /* Filtre items */
@@ -480,7 +441,7 @@ h6 {
 @media (max-width: 800px) {
   .hebergements-et-populaires {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
   }
   .hebergements {
@@ -751,8 +712,67 @@ h6 {
   justify-content: left;
   align-items: center;
 }
-
-/* Responsive layout - makes a two column-layout instead of four columns */
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: auto;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-left: 20px;
+  background-color: #f2f2f287;
+}
+.footer-a-propos,
+.footer-nos-hebergements,
+.footer-assistance {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  line-height: 25px;
+  padding-right: 250px;
+}
+.titre-1-1,
+.titre-2-1,
+.titre-3-1 {
+  padding-bottom: 10px;
+}
+.footer-mobile {
+  display: none;
+}
+@media all and (min-width: 300px) and (max-width: 768px) {
+  .footer {
+    display: none;
+  }
+  .footer-mobile {
+    display: contents;
+  }
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background-color: #f2f2f287;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  .footer-a-propos,
+  .footer-nos-hebergements,
+  .footer-assistance {
+    line-height: 30px;
+    padding-right: 0;
+  }
+  .titre-1-1,
+  .titre-2-1,
+  .titre-3-1 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+}
 @media (max-width: 992px) {
   .column {
     flex: 50%;
@@ -764,8 +784,7 @@ h6 {
   }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -779,17 +798,6 @@ h6 {
   .column_1 {
     flex: 100%;
     max-width: 100%;
-  }
-  .fort-de-pomegues,
-  .iles-du-frioul,
-  .notre-dame-de-la-garde,
-  .parc-longchamp,
-  .vieux-port,
-  .parc-nationale-des-calanques {
-    max-width: 100%;
-    max-height: 100%x;
-    width: 100%;
-    object-fit: cover;
   }
   #vieux-port-photo,
   #fort-de-pomegues-photo,
@@ -805,8 +813,32 @@ h6 {
   #mobile_parc-national-des-calanques-photo,
   #mobile_notre-dame-de-la-garde-photo,
   #mobile_parc-longchamp-photo {
+    display: flex;
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
+  }
+  .titre-ltr-1,
+  .titre-ltr-4 {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    justify-content: left;
+    align-items: center;
+  }
+  .hebergements-et-populaires {
+    display: flex;
+    flex: 25%;
+  }
+  .titre-ltr-1,
+  .titre-ltr-4,
+  .titre-ltr-2,
+  .titre-ltr-3,
+  .titre-ltr-5,
+  .titre-ltr-6 {
+    font-size: larger;
   }
 }
