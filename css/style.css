@@ -28,7 +28,6 @@ body {
 h6 {
   font-style: normal;
   font-weight: 200;
-  font-size: small;
 }
 .nav,
 .footer-nav,
@@ -246,6 +245,10 @@ h6 {
   margin-right: 20px;
   cursor: pointer;
   font-weight: 700;
+  -webkit-filter: grayscale(0) blur(0px);
+  filter: grayscale(0) blur(0px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .filtre-items-icon:hover {
   font-weight: 500;
@@ -254,6 +257,9 @@ h6 {
   box-shadow: 2px 2px 6px rgb(0, 101, 252);
   -webkit-box-shadow: 2px 2px 6px rgb(0, 101, 252);
   -moz-box-shadow: 2px 2px 6px rgb(0, 101, 252);
+  border-radius: 50%; /* on arrondit l'image */
+  -webkit-transform: rotate(360deg); /* rotation de l'image */
+  transform: rotate(360deg);
 }
 .filtre-icon {
   display: inline-block;
@@ -357,28 +363,33 @@ h6 {
 }
 .hebergements-et-populaires {
   display: flex;
-  flex: 25%;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  margin: 10px;
 }
 
 .hebergements {
   display: flex;
-  max-width: 65%;
+  flex: 1 1 25%;
+  max-width: 70%;
   flex-direction: column;
-  align-content: center;
-  justify-content: space-evenly;
+  place-content: center space-between;
   align-items: stretch;
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: rgba(240, 240, 240, 0.63);
   border-radius: 30px;
   margin-right: 20px;
+  justify-content: space-evenly;
 }
 .hebergements-all {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
+  justify-content: space-evenly;
+  align-items: baseline;
   align-content: stretch;
+  flex-direction: row;
+  height: 75%;
 }
 .hebergements-items {
   display: flex;
@@ -393,78 +404,9 @@ h6 {
   margin: 10px;
   box-shadow: 0px 5px 20px #999;
 }
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 1200px) {
-  .hebergements-items {
-    display: flex;
-    flex: 50%;
-    max-width: 35%;
-  }
-}
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media (max-width: 992px) {
-  .hebergements-items {
-    display: flex;
-    flex: 50%;
-    max-width: 40%;
-  }
-  .hebergements-et-populaires {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .hebergements {
-    display: flex;
-    max-width: 100%;
-  }
-  .textes-populaires {
-    font-size: xx-large;
-  }
-  .populaires {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: rgba(240, 240, 240, 0.63);
-    border-radius: 30px;
-    align-content: flex-start;
-  }
-
-  .populaires-titre {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-}
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 800px) {
-  .hebergements-et-populaires {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-  .hebergements {
-    display: flex;
-    max-width: 85%;
-  }
-}
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media (max-width: 700px) {
-  .hebergements-items {
-    display: flex;
-    flex: 100%;
-    max-width: 100%;
-  }
-  .hebergements {
-    display: flex;
-    max-width: 95%;
-  }
-}
-@media (max-width: 520px) {
-  .textes-populaires {
-    font-size: initial;
-  }
+.hebergements-items:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(52, 63, 165, 0.5);
 }
 .hebergements-titre {
   display: flex;
@@ -483,7 +425,9 @@ h6 {
   overflow: hidden;
   border-radius: 30px 30px 0 0;
   width: 100%;
+  height: 60%;
   object-fit: fill;
+  padding-bottom: 2%;
 }
 .container {
   display: flex;
@@ -512,25 +456,29 @@ h6 {
   justify-content: flex-start;
   align-items: center;
 }
+h4,
 h5,
 h6 {
   margin: 0;
 }
-
 p {
   color: #aaa;
 }
 .blue-star {
   color: #0065fc;
 }
-h6 {
-  font-weight: 200;
+#sous-titres-populaires-1,
+#sous-titres-populaires-2,
+#sous-titres-populaires-3 {
+  padding-top: 5%;
 }
 .hebergements-pied-de-page {
   padding-left: 50px;
 }
 .populaires {
   display: flex;
+  flex: 25%;
+  max-width: 30%;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
@@ -540,7 +488,13 @@ h6 {
   border-radius: 30px;
   align-content: flex-start;
 }
-
+.populaires-all {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
 .populaires-titre {
   display: flex;
   flex-direction: row;
@@ -550,6 +504,23 @@ h6 {
   align-content: center;
   padding-left: 20px;
   padding-right: 20px;
+  font-size: larger;
+}
+.populaires-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
+  align-content: flex-start;
+  align-items: stretch;
+  width: 55%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.populaires-items:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(52, 63, 165, 0.5);
 }
 .populaires-icon {
   display: flex;
@@ -558,13 +529,7 @@ h6 {
   align-content: center;
   padding-left: 80px;
 }
-.populaires-all {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
+
 .populaires-lien {
   text-decoration: none;
   color: rgb(0, 0, 0);
@@ -579,19 +544,10 @@ h6 {
   border-color: #f2f2f287;
   border-style: ridge;
   border: 4px;
-  margin: 25px auto;
+  margin: 20px;
   box-shadow: 0px 5px 20px #999;
 }
-.populaires-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 5px;
-  align-content: flex-start;
-  align-items: stretch;
-  width: 55%;
-}
+
 .responsive.right {
   display: flex;
   justify-content: center;
@@ -603,6 +559,164 @@ h6 {
   width: 45%;
   height: 100%;
   object-fit: fill;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 1200px) {
+  .hebergements-items {
+    display: flex;
+    flex: 50%;
+    max-width: 35%;
+  }
+  .hebergements-all {
+    max-height: fit-content;
+  }
+  .hebergements {
+    display: flex;
+    flex: 25%;
+    max-width: 60%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(240, 240, 240, 0.63);
+    border-radius: 30px;
+    margin-right: 20px;
+  }
+  .populaires {
+    display: flex;
+    flex: 25%;
+    max-width: 40%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(240, 240, 240, 0.63);
+    border-radius: 30px;
+    align-content: flex-start;
+  }
+}
+@media (max-width: 992px) {
+  .hebergements-items {
+    display: flex;
+    flex: 50%;
+    max-width: 40%;
+  }
+  .hebergements-et-populaires {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hebergements {
+    display: flex;
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .populaires {
+    display: flex;
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(240, 240, 240, 0.63);
+    border-radius: 30px;
+    align-content: flex-start;
+  }
+
+  .populaires-titre {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+@media all and (min-width: 700px) and (max-width: 992px) {
+  .textes-populaires {
+    font-size: xx-large;
+  }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 800px) {
+  .hebergements-et-populaires {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .hebergements {
+    display: flex;
+    max-width: 100%;
+  }
+  h6 {
+    font-weight: 500;
+  }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 700px) {
+  .hebergements-items {
+    display: flex;
+    flex: 100%;
+    max-width: 100%;
+  }
+  .hebergements {
+    display: flex;
+    max-width: 95%;
+  }
+  #sous-titres-hebergement-mobile-1,
+  #sous-titres-hebergement-mobile-2,
+  #sous-titres-hebergement-mobile-3,
+  #sous-titres-hebergement-mobile-4,
+  #sous-titres-hebergement-mobile-5,
+  #sous-titres-hebergement-mobile-6 {
+    font-size: large;
+  }
+  h6 {
+    font-weight: 500;
+  }
+}
+@media (max-width: 600px) {
+  #sous-titres-hebergement-mobile-1,
+  #sous-titres-hebergement-mobile-2,
+  #sous-titres-hebergement-mobile-3,
+  #sous-titres-hebergement-mobile-4,
+  #sous-titres-hebergement-mobile-5,
+  #sous-titres-hebergement-mobile-6 {
+    font-size: x-large;
+  }
+  h6 {
+    font-size: larger;
+  }
+}
+@media (max-width: 500px) {
+  .textes-populaires {
+    font-size: 19px;
+  }
+  #id-titre-populaires {
+    width: 90%;
+  }
+  .populaires-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 40px;
+  }
+  .hebergements-et-populaires {
+    flex-wrap: nowrap;
+    margin: 0px;
+  }
+  #sous-titres-hebergement-mobile-1,
+  #sous-titres-hebergement-mobile-2,
+  #sous-titres-hebergement-mobile-3,
+  #sous-titres-hebergement-mobile-4,
+  #sous-titres-hebergement-mobile-5,
+  #sous-titres-hebergement-mobile-6 {
+    font-size: x-large;
+  }
+  h6 {
+    font-size: larger;
+  }
 }
 /* ----------------------------------- */
 .activites-titre {
@@ -668,6 +782,30 @@ h6 {
   border: 4px;
   box-shadow: 0px 5px 20px #999;
   margin: 20px;
+}
+.vieux-port:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(52, 63, 165, 0.5);
+}
+.parc-nationale-des-calanques:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(52, 63, 165, 0.5);
+}
+.fort-de-pomegues:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(52, 63, 165, 0.5);
+}
+.iles-du-frioul:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(52, 63, 165, 0.5);
+}
+.notre-dame-de-la-garde:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(52, 63, 165, 0.5);
+}
+.parc-longchamp:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 10px rgba(52, 63, 165, 0.5);
 }
 .image-ltr-5,
 .image-ltr-2,
@@ -743,6 +881,7 @@ h6 {
 .footer-mobile {
   display: none;
 }
+
 @media all and (min-width: 300px) and (max-width: 768px) {
   .footer {
     display: none;
