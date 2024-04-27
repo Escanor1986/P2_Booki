@@ -1,4 +1,3 @@
-```
 # Booki
 
 Booki est un site web permettant de trouver des hébergements pour des vacances de rêve à Marseille. Il offre également une sélection d'activités à découvrir dans la région.
@@ -20,9 +19,9 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 
 1. Clonez ce dépôt sur votre machine locale :
 
-   ```
+
    git clone https://github.com/votre-utilisateur/Booki.git
-   ```
+
 
 2. Ouvrez le fichier `index.html` dans votre navigateur.
 
@@ -46,4 +45,4 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
 ## Licence
 
 Ce projet est sous licence [MIT](LICENSE).
-```
+
