@@ -48,5 +48,5 @@ Ce projet est sous licence [MIT](LICENSE).
 
 ## App Link
 
-[App Link](https://escanor1986.github.io/P_JavaScript_Blog/)
+[App Link](https://escanor1986.github.io/P2_Booki/)
 
